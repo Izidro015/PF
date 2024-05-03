@@ -62,8 +62,6 @@ mult = do putStrLn "Digite tres numeros float"
           num3 <- readLn::IO Float
           putStrLn("A multiplicacao eh: " ++ show (num1*num2*num3))
 
-
-
 temp::IO()
 temp = do putStrLn "Escreva uma temperatura em Fahrenheit"
           fah<-readLn::IO Float
@@ -74,8 +72,6 @@ temp = do putStrLn "Escreva uma temperatura em Fahrenheit"
           print(num)
 celsius::Float->Float
 celsius fah = (5/9)*(fah-32)
-
-
 
 situacao::IO()
 situacao = do putStrLn"Digite traes notas: "
@@ -89,8 +85,6 @@ calcMedia media
  |media<3 = "Reprovado"
  |media>7 = "Aprovado"
  |otherwise = "exame especial"
-
-
 
 classeEleitoral::IO()
 classeEleitoral = do putStrLn ">Classe eleitoral"
@@ -106,6 +100,9 @@ calcIdade idade
  |idade>=18 && idade<=65 = "Eleitor obrigatorio"
 
 
+
+
+
 --Lab 4
 fatorialDuplo::Int->Int 
 fatorialDuplo n
@@ -113,20 +110,19 @@ fatorialDuplo n
  |n == 1 = 1
  |n > 0 = fatorialDuplo (n-2)*n
 
-
-
 quoci::Int->Int->Int 
 quoci numerador denominador
  |numerador == denominador = 1
  |numerador == 0 = 0
  |numerador>denominador = denominador + quoci(numerador-denominador*denominador)numerador
  |otherwise = 0
-
-
 {-resto::Int->Int->Int 
 resto denominador q
  |denominador<q = p
  |otherwise = resto(denominador-q)q-}
+
+
+
 
 
 --Lab 5
@@ -164,6 +160,9 @@ concatena:: [String] -> String
 concatena lista = foldr (++) "" lista
 
 
+
+
+
 --Lab 6
 {-  1) a- Válida, lista de caracteres
        b- Válida, tripla
@@ -174,6 +173,7 @@ concatena lista = foldr (++) "" lista
        b- Retorna os elementos em uma tupla
        c- True quando xs é igual ao seu inverso (palindromo)
        -}
+       
 --Ex 3
 ultimo::[Int]->Int
 ultimo (h:t)
@@ -187,8 +187,7 @@ ultimo2 (h:t) = ultimo2 t
 ultimo3::[Int]->Int
 ultimo3 (h:t) = if(t==[]) then h
                 else ultimo3 t
-
-
+                
 --Ex 4
 type Aluno = (Integer, [Char], Double)
 type Curso = [Aluno]
@@ -204,7 +203,6 @@ maiorNota (a1:a2:t)
  |otherwise = maiorNota (a2:t)
 --curso = [(1,"joao",10), (2,"maria",9), (3,"paulo",8)]
 
-
 --b)
 insereAluno::Aluno->Curso->Curso
 insereAluno a [] = [a]
@@ -215,8 +213,10 @@ insereAluno a (h:t)
 --insereAluno(3,"pedro",7) curso
 
 
---Lab 7
 
+
+
+--Lab 7
 --Ex 1
 --a) 
 {-data Forma = Circulo Float | Retangulo Float Float
@@ -226,7 +226,6 @@ ehRedonda _ = False
 --b)
 area_C :: Float -> Float
 area_C r = pi * (r * r)
-
 area_R:: Float -> Float -> Float
 area_R b h = b * h
 --c) O construtor é tipo Forma.-}
@@ -261,11 +260,14 @@ soma_coordenada:: Coordenada -> Coordenada -> Cordenada
 soma_coordenada (x1,y1) (x2,y2) = (x1+x2, y1+y2)
 soma_coordenada2::Coord -> Coord -> Coord
 soma_coordenada2 (Coord x1 y1) (Coord x2 y2) = Coord (x1+x2) (y1+y2
- {-sq::Int -> Int
+{-sq::Int -> Int
 sq x = foldr(+) 0 (map(^2)[1..x])
 
 sqp::[Int]->Int
 sqp x = foldr (+) 0 (map(^3)(filter even x))-}
+
+
+
 
 
 --Lab 8
